@@ -3,6 +3,7 @@ package algorithm;
 import java.util.List;
 import java.util.Random;
 
+import com.sun.org.apache.bcel.internal.generic.ANEWARRAY;
 import databases.ConnectToSqlDB;
 
 public class Numbers {
@@ -18,7 +19,6 @@ public class Numbers {
      */
 
     public static void main(String[] args) throws Exception {
-
         int[] num = new int[1000000];
         storeRandomNumbers(num);
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
@@ -65,7 +65,6 @@ public class Numbers {
     public static void printValue(List<String> array) {
         for (String st : array) {
             System.out.println(st);
-
         }
     }
 }

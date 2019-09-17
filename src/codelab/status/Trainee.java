@@ -2,10 +2,11 @@ package codelab.status;
 
 public class Trainee implements Comparable<Trainee> {
 
+    public double length;
     private String firstName;
     private String lastName;
     private int numberOfExercisesSolved;
-
+    private int AverageOfStudents;
     public Trainee() {
     }
 
@@ -13,6 +14,7 @@ public class Trainee implements Comparable<Trainee> {
         this.firstName = firstName;
         this.lastName = lastName;
         this.numberOfExercisesSolved = numberOfExercisesSolved;
+        this.AverageOfStudents = AverageOfStudents;
     }
 
     public String getFirstName() {
@@ -42,5 +44,13 @@ public class Trainee implements Comparable<Trainee> {
     public int compareTo(Trainee trainee) {
         return trainee.getNumberOfExercisesSolved() - this.getNumberOfExercisesSolved();
     }
+
+    public int getAverageOfStudents() { return AverageOfStudents; }
+    public void setAverageOfStudents(int AverageOfStudents) {
+        this.AverageOfStudents = AverageOfStudents;
+    }
+
+
+
 
 }

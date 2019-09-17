@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="lib">
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/mysql-connector-java-6.0.6-bin.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/mongo-java-driver-3.4.0.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/mysql-connector-java-5.1.41-bin.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/javax.json-1.0.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/gson-2.6.2.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/java-json.jar" />
+    <archive path="/Users/sahiandalvi/Downloads/MidtermSeptember2019-master/lib/testng-6.8.7.jar" />
+  </library>
+</eclipse-userlibraries>
+

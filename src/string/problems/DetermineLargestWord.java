@@ -12,7 +12,15 @@ public class DetermineLargestWord {
          */
         String s = "Human brain is a biological learning machine";
         Map<Integer, String> wordNLength = findTheLargestWord(s);
-        //implement
+        String[] word = s.split(" ");
+        String rts = " ";
+        for (int i = 0; i < word.length; i++) {
+            if (word[i].length() >= rts.length()) {
+                rts = word[i];
+            }
+        }
+        System.out.println(rts);
+        System.out.println(rts.length());
 
     }
 

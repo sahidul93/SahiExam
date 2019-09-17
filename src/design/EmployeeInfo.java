@@ -21,6 +21,14 @@ public class EmployeeInfo {
      * declare few static and final fields and some non-static fields
      */
     static String companyName;
+    private int monthlySalary;
+    public int employeeId;
+    public  String name;
+    public String department;
+    public int totalSalary;
+    public int totalBonus;
+    public int totalPension;
+
 
     /*
      * You must implement the logic for below 2 methods and
@@ -32,13 +40,41 @@ public class EmployeeInfo {
      * you must have multiple constructor.
      * Must implement below constructor.
      */
+
+    public EmployeeInfo () {
+    }
+
     public EmployeeInfo(int employeeId) {
+        this.employeeId = employeeId;
 
     }
 
     public EmployeeInfo(String name, int employeeId) {
-
+        this.employeeId = employeeId;
+        this.name = name;
     }
+
+    public EmployeeInfo(String name, int employeeId, String department) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.department = department;
+        System.out.println(name+" , "+employeeId+" , "+department);
+    }
+
+    public void setAnnualSalary(int salary){
+        this.monthlySalary = salary;
+    }
+    public int getAnnualSalary(){
+        return monthlySalary;
+    }
+
+
+    public Integer calculateSalary(int monthlySalary) {
+        totalSalary = monthlySalary*12;
+        return totalSalary;
+    }
+
+
 
     /*
      * This methods should calculate Employee bonus based on salary and performance.
@@ -48,9 +84,12 @@ public class EmployeeInfo {
      * So you probably need to send 2 arguments.
      *
      */
-    public static int calculateEmployeeBonus(int numberOfYearsWithCompany) {
-        int total = 0;
-        return total;
+    public Integer calculateEmployeeBonus (int serviceYear){
+        int bonusRate = 0;
+        if (serviceYear >= 3) bonusRate = 10;
+        if (serviceYear < 3) bonusRate = 3;
+        totalBonus = totalSalary * bonusRate/ 100;
+        return totalBonus;
     }
 
     /*
@@ -59,21 +98,46 @@ public class EmployeeInfo {
      * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
      *
      */
-    public static int calculateEmployeePension() {
+    public  Integer calculateEmployeePension() {
         int total = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter start date in format (example: May,2015): ");
+        System.out.println("Please enter start date in format (example: April,2016): ");
         String joiningDate = sc.nextLine();
-        System.out.println("Please enter today's date in format (example: August,2017): ");
+        System.out.println("Please enter today's date in format (example: September,15,2017): ");
         String todaysDate = sc.nextLine();
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 
         //implement numbers of year from above two dates
+        double serviceYear = calculateYear(convertedTodaysDate, convertedJoiningDate);
         //Calculate pension
+        double pensionRate =0;
+        if(serviceYear<= 20) pensionRate = serviceYear*5;
+        else if(serviceYear>20) pensionRate=1;
+        totalPension = (int)(totalSalary*pensionRate/100);
+        return totalPension;
 
-        return total;
     }
+
+    private static double calculateYear(String convertedTodaysDate, String convertedJoiningDate) {
+
+        int month1, month2;
+        int year1, year2;
+        String[] dateStr1 = convertedTodaysDate.split("/");
+        String[] dateStr2 = convertedJoiningDate.split("/");
+        month1 = Integer.parseInt(dateStr1[0]);
+        month2 = Integer.parseInt(dateStr2[0]);
+        year1 = Integer.parseInt(dateStr1[1]);
+        year2 = Integer.parseInt(dateStr2[1]);
+        double years = (double)(year2+month2/12 - year1 - month1/12);
+        return years;
+    }
+
+    public void setMonthlySalary(int i) {
+    }
+
+
+
 
     private static class DateConversion {
 

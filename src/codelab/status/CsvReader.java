@@ -3,6 +3,7 @@ package codelab.status;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -60,8 +61,24 @@ public class CsvReader {
                 System.out.print("Shame on You !-->                           ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
+
+
+            /*for (Trainee student : roster) {
+                if (student.getAverageOfStudents() <= 65) {
+                    System.out.println("You Failed! ");
+
+                } else if (student.getAverageOfStudents() <= 80 && student.getAverageOfStudents() <= 70) {
+                    System.out.println("C");
+                } else if (student.getAverageOfStudents() <= 90 && student.getAverageOfStudents() <= 80) {
+                    System.out.println("B ");
+                } else if (student.getAverageOfStudents() <= 100 && student.getAverageOfStudents() <= 90) {
+                    System.out.println("A ");
+                }
+
+             */
         }
 
     }
+    }
 
-}
+
